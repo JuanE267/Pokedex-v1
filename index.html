@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="dist/loading-bar.css"/>
+    <title>Document</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');  
+        *{  
+            font-family:  'Kanit', sans-serif;
+        }
+        body{
+            background-color: #5d6368;
+            overflow: hidden;
+        }
+        form{
+            display: flex;
+            height: max-content;
+            justify-content: center;
+            align-items: center;
+        }
+        #name{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #sprite{
+            text-align: end;
+        }
+       #busqueda{
+
+        font-size: 14px;
+        text-align: center;
+        color: #5a6674;
+        width: 195px;
+        height: 20px;
+        margin-left: 25px;
+        border: none;
+        border-radius: 35px;
+        appearance: none;
+        outline: none;
+        box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5);
+        background: #fff;
+        transition: all 0.3s ease;
+
+       }
+       #nameMayus{
+           letter-spacing: 4px;
+       }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 255px;
+            background-color: #f1f1f1;
+            border-radius: 30px;
+            box-shadow: 0 0px 8px rgba(0, 0, 0, 0.8);
+            
+            
+        }
+        ul{
+            background-color: #ffffff;
+            box-shadow: 0 0px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+        li{
+            list-style: none;
+            position: relative;
+            color: rgb(139, 139, 139);
+            left: -20%
+        }
+        .spaceList{
+            display: flex;
+            justify-content: space-between;
+            padding: 1px;
+            margin: 7px;
+            margin-right: 1px;
+        }
+        .ldBar{
+            padding-top: 2px;
+        }
+        .ldBar.red path.mainline {
+            stroke-width: 3;
+            stroke: red;
+            stroke-linecap: round;
+            
+    
+  }
+  .ldBar.green path.mainline {
+            stroke-width: 3;
+            stroke: green;
+            stroke-linecap: round;    
+  }
+  .ldBar-label{
+      padding-top: 2px;
+  }
+  .ldBar-label::after{
+      content: ""
+  }
+  #searchBar{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: max-content;
+      margin: 50px;
+      
+  }
+  #boton{
+      margin-left: 10px;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      border: none;
+      box-shadow: 0 0px 8px rgba(0, 0, 0, 0.4   );
+      cursor: pointer;
+      opacity: 0.7;
+      transition: 0.2s ease;
+  }
+  svg{
+      padding-top: 5px;
+  }
+  #boton:hover{
+      opacity: 1;
+  }
+  
+        
+    </style>
+</head>
+<body>
+    <div id="searchBar">
+    <input type="text" placeholder="Ingrese un Pokemon..." id="busqueda" >
+        <button id="boton">
+            <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
+                <title id="title">Search Icon</title>
+                <desc id="desc">A magnifying glass icon.</desc>
+                <g class="search-path" fill="none" stroke="#848F91">
+                    <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/>
+                    <circle cx="8" cy="8" r="7"/>
+                </g>
+            </svg>
+        </button>
+    </div>
+        <form>
+        
+ <div class="container">   
+<img src="poke-icon.png" alt="" width="150px" height="150px" id="sprite">
+<h1 id="nameMayus">Pokedex-v1</h1>
+
+
+    
+<ul>
+    <div class="spaceList">
+    <li> HP</li>
+    <div class="ldBar label-left red" data-max="200" id="myItem1" ></div> <!-- modificar dist indexHTML para mover label, cambiar ldbar center top 50 left -10 -->
+</div>
+<div class="spaceList">
+<li> Attack </li>
+    <div class="ldBar label-left green" data-max="200" id="myItem2" ></div>
+</div>
+<div class="spaceList">
+ <li> Defence </li>
+    <div class="ldBar label-left red" data-max="200" id="myItem3" ></div>
+</div>
+<div class="spaceList">
+    <li> Speed </li>
+    <div class="ldBar label-left red" data-max="200" id="myItem4" ></div>
+</div>
+<div class="spaceList">
+    <li> Sp.Attack </li>
+    <div class="ldBar label-left green" data-max="200" id="myItem5" ></div>
+</div>
+<div class="spaceList"> 
+    <li> Sp.Defense </li>
+    <div class="ldBar label-left green" data-max="200" id="myItem6" ></div>
+</ul>
+
+</div>
+</form>
+    <script type="text/javascript" src="dist/loading-bar.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
